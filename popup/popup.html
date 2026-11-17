@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eye Relief — 20-20-20</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup-shell">
+    <header class="header">
+      <div class="brand">
+        <img class="brand-icon" src="../icons/icon-48.png" width="28" height="28" alt="Eye Relief icon">
+        <div class="brand-text">
+          <h1 class="brand-title">Eye Relief</h1>
+          <p class="brand-subtitle">20-20-20 Guard</p>
+        </div>
+      </div>
+
+      <label class="switch" title="Enable or disable Eye Relief">
+        <input id="enabledToggle" type="checkbox" aria-label="Enable Eye Relief">
+        <span class="switch-slider"></span>
+      </label>
+    </header>
+
+    <section class="timer-card" aria-label="Timer status">
+      <span id="phasePill" class="phase-pill phase-working">Screen Time</span>
+
+      <div class="ring-container">
+        <svg class="ring-svg" viewBox="0 0 140 140" aria-hidden="true">
+          <circle class="ring-track" cx="70" cy="70" r="58"></circle>
+          <circle id="timerRing" class="ring-progress" cx="70" cy="70" r="58"></circle>
+        </svg>
+        <div class="ring-center">
+          <div id="timerDisplay" class="timer-display">20:00</div>
+          <div id="timerCaption" class="timer-caption">until green break</div>
+        </div>
+      </div>
+
+      <div class="controls-grid">
+        <button id="pauseBtn" class="btn btn-secondary" type="button">Pause</button>
+        <button id="resetBtn" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+      <button id="forceOverlayBtn" class="btn btn-primary" type="button">
+        Force Green Overlay Now
+      </button>
+    </section>
+
+    <section class="settings-card" aria-label="Settings">
+      <h2 class="settings-heading">Rule Settings</h2>
+
+      <div class="setting-row">
+        <label class="setting-label" for="workMinutesInput">
+          <span>Screen Time Limit</span>
+          <small>Minutes before break (1–120)</small>
+        </label>
+        <div class="input-unit">
+          <input id="workMinutesInput" type="number" min="1" max="120" step="1" value="20">
+          <span>min</span>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <label class="setting-label" for="breakSecondsInput">
+          <span>Break Duration</span>
+          <small>Green overlay length (5–300)</small>
+        </label>
+        <div class="input-unit">
+          <input id="breakSecondsInput" type="number" min="5" max="300" step="1" value="20">
+          <span>sec</span>
+        </div>
+      </div>
+
+      <div class="setting-row setting-row-toggle">
+        <label class="setting-label" for="strictModeToggle">
+          <span>Strict Mode</span>
+          <small>Force overlay (disable skip button)</small>
+        </label>
+        <label class="switch switch-compact">
+          <input id="strictModeToggle" type="checkbox" checked aria-label="Strict mode">
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row setting-row-toggle">
+        <label class="setting-label" for="soundEnabledToggle">
+          <span>Notification Sound</span>
+          <small>Play chime when screen timer finishes</small>
+        </label>
+        <label class="switch switch-compact">
+          <input id="soundEnabledToggle" type="checkbox" checked aria-label="Notification sound">
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="breaksTodayText">Breaks completed today: 0</span>
+    </footer>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
