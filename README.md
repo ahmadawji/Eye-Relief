@@ -11,6 +11,12 @@ Give your eyes a break while you browse. **Eye Relief** follows the **20-20-20 r
 - **Instant Break Button**: Need a break right now or want to try it out? Click **Force Green Overlay Now** in the popup.
 - **Private & Offline**: Your settings and daily break count stay in your browser. Nothing is tracked or sent anywhere.
 
+## Screenshots
+
+| Toolbar Popup | Forced Green Break Overlay |
+| :---: | :---: |
+| ![Eye Relief Popup](screenshots/popup.png) | ![Eye Relief Forced Green Overlay](screenshots/overlay.jpg) |
+
 ## How to Install from GitHub
 
 Chrome, Edge, and Brave cannot load extensions directly from a GitHub URL, so you will download or clone the folder first and load it in Developer mode.
